@@ -53,15 +53,15 @@ class GUI():
                             1, (255, 255, 255), 1)
         ########## To Kristina and Michael find your own path ##########
         # Getting images showing hand gestures and resizing them 
-        closedHandImg = cv2.imread(r'.venv\01.png')
+        closedHandImg = cv2.imread(r'.venv\00.jpg')
         closedHandImg = cv2.resize(closedHandImg, (55, 70))
-        oneFingerImg = cv2.imread(r'.venv\01.png')
+        oneFingerImg = cv2.imread(r'.venv\01.jpg')
         oneFingerImg = cv2.resize(oneFingerImg, (55, 70))
-        twoFingersImg = cv2.imread(r'.venv\01.png')
+        twoFingersImg = cv2.imread(r'.venv\02.jpg')
         twoFingersImg = cv2.resize(twoFingersImg, (55, 70))
-        threeFingersImg = cv2.imread(r'.venv\01.png')
+        threeFingersImg = cv2.imread(r'.venv\03.jpg')
         threeFingersImg = cv2.resize(threeFingersImg, (55, 70))
-        openHandImg = cv2.imread(r'.venv\05.png')
+        openHandImg = cv2.imread(r'.venv\05.jpg')
         openHandImg = cv2.resize(openHandImg, (55, 70))
         # Defining where to put the images on an image
         DroneGUI[108:178, 675:730] = closedHandImg
