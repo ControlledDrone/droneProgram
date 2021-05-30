@@ -54,21 +54,21 @@ class GUI():
         ########## To Kristina and Michael find your own path ##########
         # Getting images showing hand gestures and resizing them 
         closedHandImg = cv2.imread(r'.venv\00.jpg')
-        closedHandImg = cv2.resize(closedHandImg, (55, 70))
+        closedHandImg = cv2.resize(closedHandImg, (75, 100))
         oneFingerImg = cv2.imread(r'.venv\01.jpg')
-        oneFingerImg = cv2.resize(oneFingerImg, (55, 70))
+        oneFingerImg = cv2.resize(oneFingerImg, (75, 100))
         twoFingersImg = cv2.imread(r'.venv\02.jpg')
-        twoFingersImg = cv2.resize(twoFingersImg, (55, 70))
+        twoFingersImg = cv2.resize(twoFingersImg, (75, 100))
         threeFingersImg = cv2.imread(r'.venv\03.jpg')
-        threeFingersImg = cv2.resize(threeFingersImg, (55, 70))
+        threeFingersImg = cv2.resize(threeFingersImg, (75, 100))
         openHandImg = cv2.imread(r'.venv\05.jpg')
-        openHandImg = cv2.resize(openHandImg, (55, 70))
+        openHandImg = cv2.resize(openHandImg, (75, 100))
         # Defining where to put the images on an image
-        DroneGUI[108:178, 675:730] = closedHandImg
-        DroneGUI[188:258, 675:730] = oneFingerImg
-        DroneGUI[268:338, 675:730] = twoFingersImg
-        DroneGUI[348:418, 675:730] = threeFingersImg
-        DroneGUI[428:498, 675:730] = openHandImg
+        DroneGUI[95:195, 700:775] = closedHandImg
+        DroneGUI[170:270, 620:695] = oneFingerImg
+        DroneGUI[250:350, 700:775] = twoFingersImg
+        DroneGUI[330:430, 620:695] = threeFingersImg
+        DroneGUI[405:505, 700:775] = openHandImg
 
         # Putting text indicating how to start controlling the drone
         cv2.putText(DroneGUI, "Start", (350, 550), cv2.FONT_HERSHEY_TRIPLEX, 
