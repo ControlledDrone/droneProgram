@@ -10,10 +10,6 @@ class NavigateDrone():
 
         lr, fb, ud, yv = 0, 0, 0, 0 #LeftRight, ForwardBackward, UpDown, Yaw (side to side)
         speed = 10 
-     
-        # If pointer finger are up then drone hovers
-        if noOfFingers == 1:
-            print("HOVERING")
 
         # If pointer finger and middle finger are up and.....
         if noOfFingers == 2 and centercoordinate[1] < screen_center_h:
