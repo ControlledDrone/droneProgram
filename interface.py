@@ -212,6 +212,10 @@ class GUI():
                      # If thumb is out with front of hand facing towards the screen
                     if noOfFingers == 0:
                         me.rotate_counter_clockwise(9) # Drone rotate
+                      # If pointer finger are up then drone hovers
+                    if noOfFingers == 1:
+                        me.stop()
+                        print("HOVERING")
 
                     # Navigate the drone 
                     vals = navDrone.navigateDrone(centerCoordinateHand, img, noOfFingers, center_dist, distance1)
