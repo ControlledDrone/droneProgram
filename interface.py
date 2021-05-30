@@ -209,10 +209,10 @@ class GUI():
                     #Finds number of fingers
                     noOfFingers = drone.findNoOfFingers(img, lmList, tipIds)
 
-                     # If thumb is out with front of hand facing towards the screen
+                    # If letf hand is closed
                     if noOfFingers == 0:
                         me.rotate_counter_clockwise(9) # Drone rotate
-                      # If pointer finger are up then drone hovers
+                    # If left pointer finger are up then drone hovers
                     if noOfFingers == 1:
                         me.stop()
                         print("HOVERING")
