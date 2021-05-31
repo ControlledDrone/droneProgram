@@ -3,38 +3,10 @@ from droneControls import DroneControls
 
 
 class NavigateDrone():
-    ''' A class used to make drone fly in choosen directions 
-        ...
-        
-        Attributes
-        -----------
-        centercoordinate
-            
-        img
-            
-        noOfFingers
-            
-        center_dist
-            
-        distance1
-            
-        
-        Methods
-        -----------
-        navigateDrone(self, centercoordinate, img, noOfFingers, center_dist, distance1):
-            Method used for navigating drone
-    '''
+    ''' A class used to make drone fly in choosen directions '''
+
     def navigateDrone(self, centercoordinate, img, noOfFingers, center_dist, distance1):
-        ''' Method used for navigating drone 
-
-            Parameters
-            ----------
-                
-
-            Returns
-            ---------
-            lr, fb, ud, yv 
-        '''
+        ''' Method used for navigating drone '''
         # Find center height and width of given img 
         screen_center_h, screen_center_w = DroneControls.findScreenCenter(img)
 
