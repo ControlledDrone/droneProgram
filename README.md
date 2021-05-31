@@ -31,6 +31,4 @@
 
 
 ## Program demonstration
-https://user-images.githubusercontent.com/72916303/120245758-89431c80-c26e-11eb-9776-34d3799c2ee0.mp4
-https://www.youtube.com/embed/FMXTwj8RdDc
-
+https://user-images.githubusercontent.com/72916303/120245973-2900aa80-c26f-11eb-86bb-a54e627039b5.mp4
