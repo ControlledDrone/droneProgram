@@ -32,8 +32,6 @@ class DroneControls():
         h, w = img.shape[:2]
         # Calculating the distance from center to coordinates
         center_dist = np.linalg.norm(np.array((x, y)) - np.array((h / 2, w / 2)))
-        # Calculating velocity variable 
-        # velocity = (center_dist/w) * 3.0
         # Draws velocity line in opencv with function line
         cv2.line(img, (x, y), (int(w / 2), int(h / 2)), (30, 30, 30), 1)  # Black color
         # Draws lines to form a cross in center of screen
@@ -41,7 +39,6 @@ class DroneControls():
         cv2.line(img, (int(w / 2), int(h / 2)), (int(w / 2), int(h / 2) + 7), (255, 255, 255), 1)
         cv2.line(img, (int(w / 2), int(h / 2)), (int(w / 2) - 7, int(h / 2)), (255, 255, 255), 1)
         cv2.line(img, (int(w / 2), int(h / 2)), (int(w / 2), int(h / 2) - 7), (255, 255, 255), 1)
-        # return int(velocity)
         return int(center_dist)
 
     # Method used to find the distance between two landmarks
