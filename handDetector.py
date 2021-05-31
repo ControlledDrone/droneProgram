@@ -8,6 +8,9 @@ class HandDetector():
     ...
     Attributes
     ----------
+    img :
+    draw :
+    handNo :
     
     Methods
     -------
@@ -28,9 +31,6 @@ class HandDetector():
             maxHands :
             detectionCon :
             trackCon :
-            mpHands :
-            hands :
-            mpDraw :
         '''
         self.mode = mode
         self.maxHands = maxHands  # Set to 1 to minimize confusion between detected hands
@@ -48,7 +48,9 @@ class HandDetector():
         ...
         Parameters
         ----------
-            
+        img :
+        draw :
+        
         Returns
         -------
         img
@@ -69,6 +71,10 @@ class HandDetector():
         ...
         Parameters
         ----------
+        img : 
+        handNo :
+        draw :
+        
         Returns
         -------
         lmList
