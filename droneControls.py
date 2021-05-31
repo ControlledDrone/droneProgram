@@ -10,7 +10,14 @@ class DroneControls():
     ...
     Attributes
     ----------
-
+    me :
+    img :
+    lmPos :
+    lmPos1 :
+    lmPos2 :
+    lmList :
+    tipIds : 
+    
     Methods
     -------
         tello_battery(self, me):
@@ -36,7 +43,7 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        me :
 
         Returns
         -------
@@ -52,7 +59,9 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        img :
+        lmPos :
+        
         Returns
         -------
         out_of_dz == False
@@ -75,7 +84,8 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        img :
+        lmPos :
 
         Returns
         -------
@@ -99,7 +109,8 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        lmPos1 :
+        lmPos2 :
 
         Returns
         -------
@@ -117,7 +128,8 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        lmPos1 :
+        lmPos2 :
 
         Returns
         -------
@@ -135,8 +147,8 @@ class DroneControls():
         ...
         Parameters
         ----------
-
-
+        lmPos1 :
+        
         Returns
         -------
         x, y
@@ -150,7 +162,7 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        img :
 
         Returns
         -------
@@ -167,7 +179,9 @@ class DroneControls():
         ...
         Parameters
         ----------
-
+        img :
+        lmList :
+        tipIds :
 
         Returns
         -------
