@@ -1,5 +1,5 @@
 # droneProgram - Control drone through hand gestures
-This is a semester project that recognizes hand gestures with Mediapipe that gets used control a Tello drone.
+This is a semester project that recognizes hand gestures with Mediapipe that gets used to control a Tello drone.
 
 ## Requirements
 ### Hardware
