@@ -33,7 +33,7 @@ class NavigateDrone():
 
             Returns
             ---------
-                
+            lr, fb, ud, yv 
         '''
         # Find center height and width of given img 
         screen_center_h, screen_center_w = DroneControls.findScreenCenter(img)
