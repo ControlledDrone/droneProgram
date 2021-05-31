@@ -4,7 +4,15 @@
 - kdmdk
 
 ## Requirements
-- mk
+### Hardware
+- [x] Finish my changes
+- [X] Push my commits to GitHub
+- [X] Open a pull request
+
+### Software
+- [x] Finish my changes
+- [X] Push my commits to GitHub
+- [X] Open a pull request
 
 ## Directory
 - main.py
