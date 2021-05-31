@@ -15,16 +15,54 @@ me.connect()
 knowInstructions = False
 
 
-# Class used to run graphical user interface with opencv
 class GUI():
-    # Method for handling left mouse click event
+    ''' A class used to run graphical user interface with opencv
+    ...
+
+    Attributes
+    ----------
+
+
+    Methods
+    -------
+    ifClicked(event, x, y, flags, params):
+        Method for handling left mouse click event
+    instructions(DroneGUI):
+        Method for showing instructions in opencv
+    insideRectangle(img, x, y):
+        Method for checking if point is inside rectangles
+    printDirection(img, vals, noOfFingers):
+                                                        !!!MANGLER METODE FORKLARING!!!
+    startGUI():
+                                                        !!!MANGLER METODE FORKLARING!!!
+    '''
     def ifClicked(event, x, y, flags, params):
+        '''
+        Method for handling left mouse click event
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        None
+        '''
+        
         global knowInstructions
         if event == cv2.EVENT_LBUTTONDOWN:
             knowInstructions = not knowInstructions
 
-    # Method for showing instructions in opencv
     def instructions(DroneGUI):
+        '''
+        Method for showing instructions in opencv
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        None
+        '''
         # Put text header
         cv2.putText(DroneGUI, "Instructions", (187, 55), cv2.FONT_HERSHEY_TRIPLEX,
                     2, (255, 255, 255), 1)
@@ -83,8 +121,17 @@ class GUI():
         # Display instructions on image in the specified window (DroneGUI)
         cv2.imshow('DroneGUI', DroneGUI)
 
-    # Method for checking if point is inside rectangles
     def insideRectangle(img, x, y):
+        '''
+        Method for checking if point is inside rectangles
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        None
+        '''
         # Rectangles in GUI for takeoff and landing
         cv2.rectangle(img, (478, 0), (593, 30), (0, 0, 0), cv2.FILLED)
         cv2.putText(img, "Landing", (488, 21), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1,
@@ -106,8 +153,17 @@ class GUI():
                         1, (0, 0, 0), 1)
             me.takeoff()
 
-    # Method
     def printDirection(img, vals, noOfFingers):
+        '''
+        Method for XXX
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        None
+        '''
         cv2.rectangle(img, (0, 0), (800, 30), (255, 255, 255), cv2.FILLED)
         # Displaying text for certain fingercounts
         if noOfFingers == 0:
@@ -139,8 +195,17 @@ class GUI():
                 cv2.putText(img, "Flying forwards with speed " + str(int(vals[1])) + "...", (15, 21),
                             cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0), 1)
 
-    # Method
     def startGUI():
+        '''
+        Method for XXX
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        None
+        '''
         # Class objects
         detector = HandDetector()
         drone = DroneControls()
