@@ -5,67 +5,16 @@ import numpy as np
 
 
 class DroneControls():
-    '''
-    A class to make calculations to control and get info on drone
-    ...
-    Attributes
-    ----------
-    me :
-    img :
-    lmPos :
-    lmPos1 :
-    lmPos2 :
-    lmList :
-    tipIds : 
-    
-    Methods
-    -------
-        tello_battery(self, me):
-            Method to get the value of drone's battery power
-        createDeadZone(self, img, lmPos):
-            Method creates deadzone in the center of the img when a certain landmark is inside
-        findVeloFromCenter(self, img, lmPos):
-            Method used to find the velocity from the center of the img to a certain landmark
-        findDistanceLms(self, lmPos1, lmPos2):
-            Method used to find the distance between two landmarks
-        findMiddleXYOfLms(self, lmPos1, lmPos2):
-            Method used to find the middle coordinate between two landmarks
-        findXYofLm(self, lmPos1):
-            Method used to return the x and y values for a certain landmark
-        findScreenCenter(img):
-            Method returns height and width of our webcamera img
-        findNoOfFingers(self, img, lmList, tipIds):
-            Method used to find and return open fingers 
-    '''
-    def tello_battery(self, me):
-        '''
-        Method to get the value of drone's battery power
-        ...
-        Parameters
-        ----------
-        me :
+    ''' A class to make calculations to control and get info on drone '''
 
-        Returns
-        -------
-        int(battery_status)
-        '''
+    def tello_battery(self, me):
+        ''' Method to get the value of drone's battery power '''
         global battery_status
         battery_status = me.get_battery()
         return int(battery_status)
 
     def createDeadZone(self, img, lmPos):
-        '''
-        Method to create deadzone in the center of the img when a certain landmark is inside
-        ...
-        Parameters
-        ----------
-        img :
-        lmPos :
-        
-        Returns
-        -------
-        out_of_dz == False
-        '''
+        ''' Method to create deadzone in the center of the img when a certain landmark is inside '''
         x, y = lmPos[0:]
         h, w = img.shape[:2]
         screen_center_w = w / 2
@@ -79,18 +28,8 @@ class DroneControls():
             return out_of_dz == False
 
     def findVeloFromCenter(self, img, lmPos):
-        '''
-        Method to find the velocity from the center of the img to a certain landmark
-        ...
-        Parameters
-        ----------
-        img :
-        lmPos :
-
-        Returns
-        -------
-        int(center_dist)
-        '''        x, y = lmPos[0:]
+        ''' Method to find the velocity from the center of the img to a certain landmark '''
+        x, y = lmPos[0:]
         h, w = img.shape[:2]
         # Calculating the distance from center to coordinates
         center_dist = np.linalg.norm(np.array((x, y)) - np.array((h / 2, w / 2)))
@@ -104,18 +43,7 @@ class DroneControls():
         return int(center_dist)
 
     def findDistanceLms(self, lmPos1, lmPos2):
-        '''
-        Method to find the distance between two landmarks
-        ...
-        Parameters
-        ----------
-        lmPos1 :
-        lmPos2 :
-
-        Returns
-        -------
-        distance
-        '''
+        ''' Method to find the distance between two landmarks '''
         x1, y1 = lmPos1[1:]
         x2, y2 = lmPos2[1:]
         # Calculates distance (line: 52) learned from the website: https://morioh.com/p/9ce670a59fc3
@@ -123,18 +51,7 @@ class DroneControls():
         return distance
 
     def findMiddleXYOfLms(self, lmPos1, lmPos2):
-        '''
-        Method to find the middle coordinate between two landmarks
-        ...
-        Parameters
-        ----------
-        lmPos1 :
-        lmPos2 :
-
-        Returns
-        -------
-        x, y
-        '''
+        ''' Method to find the middle coordinate between two landmarks '''
         x1, y1 = lmPos1[1:]
         x2, y2 = lmPos2[1:]
         # Calculates the middle coordinate between the two landmarks
@@ -142,51 +59,19 @@ class DroneControls():
         return x, y
 
     def findXYofLm(self, lmPos1):
-        '''
-        Method to return the x and y values for a certain landmark
-        ...
-        Parameters
-        ----------
-        lmPos1 :
-        
-        Returns
-        -------
-        x, y
-        '''
+        ''' Method to return the x and y values for a certain landmark '''
         x, y = lmPos1[1:]
         return x, y
 
     def findScreenCenter(img):
-        '''
-        Method returns height and width of our webcamera img  
-        ...
-        Parameters
-        ----------
-        img :
-
-        Returns
-        -------
-        screen_center_h, screen_center_w
-        '''
+        ''' Method returns height and width of our webcamera img '''
         h, w = img.shape[:2]
         screen_center_h = h / 2
         screen_center_w = w / 2
         return screen_center_h, screen_center_w
 
     def findNoOfFingers(self, img, lmList, tipIds):
-        '''
-        Method to find and return open fingers
-        ...
-        Parameters
-        ----------
-        img :
-        lmList :
-        tipIds :
-
-        Returns
-        -------
-        noOfFingers
-        '''
+        ''' Method to find and return open fingers '''
         # Creates a list for finding and storing open fingers
         fingers = []
         # If there are landmarks in the webcamera image
