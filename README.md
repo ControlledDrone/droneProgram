@@ -4,7 +4,7 @@ This is a semester project that recognizes hand gestures with Mediapipe that get
 ## Requirements
 ### Hardware
 - [x] A DJI Ryze Tello drone
-- [X] Batteries for DJI drone
+- [X] Batteries for DJI Ryze Tello drone
 - [X] A computer with a webcam
 
 ### Software
