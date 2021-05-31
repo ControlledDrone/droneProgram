@@ -7,7 +7,7 @@ from interface import GUI
 
 # The main function
 def main():
-    # Begin method startGUI() from class GUI()
+    ''' Begins method startGUI() from class GUI() '''
     print("Starting GUI...")
     GUI.startGUI()
 
