@@ -2,9 +2,7 @@
 from handDetector import HandDetector
 from droneControls import DroneControls
 from navigateDrone import NavigateDrone
-from dji
-
-py import tello
+from djitellopy import tello
 import cv2
 import time
 
@@ -16,64 +14,17 @@ knowInstructions = False
 
 
 class GUI():
-    ''' A class used to run graphical user interface with opencv
-    ...
-    Attributes
-    ----------
-    x :
-    y :
-    flags :
-    params :
-    DroneGUI :
-    img :
-    vals :
-    noOfFingers :
+    ''' A class used to run graphical user interface with opencv '''
 
-    Methods
-    -------
-    ifClicked(event, x, y, flags, params):
-        Method for handling left mouse click event
-    instructions(DroneGUI):
-        Method for showing instructions in opencv
-    insideRectangle(img, x, y):
-        Method for checking if point is inside rectangles
-    printDirection(img, vals, noOfFingers):
-                                                        !!!MANGLER METODE FORKLARING!!!
-    startGUI():
-                                                        !!!MANGLER METODE FORKLARING!!!
-    '''
     def ifClicked(event, x, y, flags, params):
-        '''
-        Method for handling left mouse click event
+        ''' Method for handling left mouse click event '''
 
-        Parameters
-        ----------
-        x :
-        y :
-        flags :
-        params :
-        
-        Returns
-        -------
-        None
-        '''
-        
         global knowInstructions
         if event == cv2.EVENT_LBUTTONDOWN:
             knowInstructions = not knowInstructions
 
     def instructions(DroneGUI):
-        '''
-        Method for showing instructions in opencv
-
-        Parameters
-        ----------
-        DroneGUI : 
-        
-        Returns
-        -------
-        None
-        '''
+        ''' Method for showing instructions in opencv '''
         # Put text header
         cv2.putText(DroneGUI, "Instructions", (187, 55), cv2.FONT_HERSHEY_TRIPLEX,
                     2, (255, 255, 255), 1)
@@ -133,19 +84,7 @@ class GUI():
         cv2.imshow('DroneGUI', DroneGUI)
 
     def insideRectangle(img, x, y):
-        '''
-        Method for checking if point is inside rectangles
-
-        Parameters
-        ----------
-        img :
-        x :
-        y :
-        
-        Returns
-        -------
-        None
-        '''
+        ''' Method for checking if point is inside rectangles '''
         # Rectangles in GUI for takeoff and landing
         cv2.rectangle(img, (478, 0), (593, 30), (0, 0, 0), cv2.FILLED)
         cv2.putText(img, "Landing", (488, 21), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1,
@@ -168,19 +107,7 @@ class GUI():
             me.takeoff()
 
     def printDirection(img, vals, noOfFingers):
-        '''
-        Method for XXX
-
-        Parameters
-        ----------
-        img :
-        vals :
-        noOfFingers :
-        
-        Returns
-        -------
-        None
-        '''
+        ''' Method for XXX '''
         cv2.rectangle(img, (0, 0), (800, 30), (255, 255, 255), cv2.FILLED)
         # Displaying text for certain fingercounts
         if noOfFingers == 0:
@@ -213,17 +140,7 @@ class GUI():
                             cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0), 1)
 
     def startGUI():
-        '''
-        Method for XXX
-
-        Parameters
-        ----------
-        None
-
-        Returns
-        -------
-        None
-        '''
+        ''' Method for XXX '''
         # Class objects
         detector = HandDetector()
         drone = DroneControls()
