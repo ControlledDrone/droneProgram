@@ -1,3 +1,7 @@
+'''
+This program makes it possible to send commands to a Tello drone through a webcamera. 
+The program is created by: Controlled drone (S2126631-1) - 4. semester - spring 2021
+'''
 # Import the necessary modules
 from interface import GUI
 
