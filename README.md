@@ -1,10 +1,5 @@
-
-
-
 # droneProgram - Control drone through hand gestures
-
-## Repository contains the following content:
-- kdmdk
+This is a semester project that recognizes hand gestures with Mediapipe that gets used control a Tello drone.
 
 ## Requirements
 ### Hardware
