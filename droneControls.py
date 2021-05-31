@@ -30,7 +30,6 @@ class DroneControls():
         findNoOfFingers(self, img, lmList, tipIds):
             Method used to find and return open fingers 
     '''
-    # Method to get the value of drone's battery power
     def tello_battery(self, me):
         '''
         Method to get the value of drone's battery power
@@ -47,10 +46,9 @@ class DroneControls():
         battery_status = me.get_battery()
         return int(battery_status)
 
-    # Method creates deadzone in the center of the img when a certain landmark is inside
     def createDeadZone(self, img, lmPos):
         '''
-        Method to get the value of drone's battery power
+        Method to create deadzone in the center of the img when a certain landmark is inside
         ...
         Parameters
         ----------
@@ -71,10 +69,9 @@ class DroneControls():
         if x < screen_center_w + dead_zone_size and x > screen_center_w - dead_zone_size and y < screen_center_h + dead_zone_size and y > screen_center_h + dead_zone_size:
             return out_of_dz == False
 
-    # Method used to find the velocity from the center of the img to a certain landmark
     def findVeloFromCenter(self, img, lmPos):
         '''
-        Method to get the value of drone's battery power
+        Method to find the velocity from the center of the img to a certain landmark
         ...
         Parameters
         ----------
@@ -96,10 +93,9 @@ class DroneControls():
         cv2.line(img, (int(w / 2), int(h / 2)), (int(w / 2), int(h / 2) - 7), (255, 255, 255), 1)
         return int(center_dist)
 
-    # Method used to find the distance between two landmarks
     def findDistanceLms(self, lmPos1, lmPos2):
         '''
-        Method to get the value of drone's battery power
+        Method to find the distance between two landmarks
         ...
         Parameters
         ----------
@@ -115,10 +111,9 @@ class DroneControls():
         distance = math.hypot(x2 - x1, y2 - y1)
         return distance
 
-    # Method used to find the middle coordinate between two landmarks
     def findMiddleXYOfLms(self, lmPos1, lmPos2):
         '''
-        Method to get the value of drone's battery power
+        Method to find the middle coordinate between two landmarks
         ...
         Parameters
         ----------
@@ -134,10 +129,9 @@ class DroneControls():
         x, y = (x1 + x2) // 2, (y1 + y2) // 2
         return x, y
 
-    # Method used to return the x and y values for a certain landmark
     def findXYofLm(self, lmPos1):
         '''
-        Method to get the value of drone's battery power
+        Method to return the x and y values for a certain landmark
         ...
         Parameters
         ----------
@@ -150,10 +144,9 @@ class DroneControls():
         x, y = lmPos1[1:]
         return x, y
 
-    # Method returns height and width of our webcamera img    
     def findScreenCenter(img):
         '''
-        Method to get the value of drone's battery power
+        Method returns height and width of our webcamera img  
         ...
         Parameters
         ----------
@@ -168,10 +161,9 @@ class DroneControls():
         screen_center_w = w / 2
         return screen_center_h, screen_center_w
 
-    # Method used to find and return open fingers 
     def findNoOfFingers(self, img, lmList, tipIds):
         '''
-        Method to get the value of drone's battery power
+        Method to find and return open fingers
         ...
         Parameters
         ----------
