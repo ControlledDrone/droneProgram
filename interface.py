@@ -18,10 +18,16 @@ knowInstructions = False
 class GUI():
     ''' A class used to run graphical user interface with opencv
     ...
-
     Attributes
     ----------
-
+    x :
+    y :
+    flags :
+    params :
+    DroneGUI :
+    img :
+    vals :
+    noOfFingers :
 
     Methods
     -------
@@ -42,7 +48,11 @@ class GUI():
 
         Parameters
         ----------
-
+        x :
+        y :
+        flags :
+        params :
+        
         Returns
         -------
         None
@@ -58,7 +68,8 @@ class GUI():
 
         Parameters
         ----------
-
+        DroneGUI : 
+        
         Returns
         -------
         None
@@ -127,7 +138,10 @@ class GUI():
 
         Parameters
         ----------
-
+        img :
+        x :
+        y :
+        
         Returns
         -------
         None
@@ -159,7 +173,10 @@ class GUI():
 
         Parameters
         ----------
-
+        img :
+        vals :
+        noOfFingers :
+        
         Returns
         -------
         None
@@ -201,6 +218,7 @@ class GUI():
 
         Parameters
         ----------
+        None
 
         Returns
         -------
