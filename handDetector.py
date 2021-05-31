@@ -4,34 +4,11 @@ import mediapipe as mp
 
 
 class HandDetector():
-    ''' A class used to run graphical user interface with opencv
-    ...
-    Attributes
-    ----------
-    img :
-    draw :
-    handNo :
-    
-    Methods
-    -------
-    findHands(self, img, draw=True):
-        Method finds hands in img and return img with hands drawn
-    findPosition(self, img, handNo=0, draw=True):
-        Method used to return list of landmarks in img
-    '''
+    ''' A class used to run graphical user interface with opencv '''
 
     # Constructor for hand detector
     def __init__(self, mode=False, maxHands=1, detectionCon=0.7, trackCon=0.6):
-        '''
-        Method for handling left mouse click event
-        ...
-        Parameters
-        ----------
-            mode :
-            maxHands :
-            detectionCon :
-            trackCon :
-        '''
+        ''' Method for handling left mouse click event '''
         self.mode = mode
         self.maxHands = maxHands  # Set to 1 to minimize confusion between detected hands
         self.detectionCon = detectionCon  # Optimal between 0.5-0.8
@@ -41,20 +18,8 @@ class HandDetector():
         self.hands = self.mpHands.Hands(self.mode, self.maxHands, self.detectionCon, self.trackCon)
         self.mpDraw = mp.solutions.drawing_utils
 
-    # Method finds hands in img and return img with hands drawn
     def findHands(self, img, draw=True):
-        '''
-        Method to find hands in img and return img with hands drawn
-        ...
-        Parameters
-        ----------
-        img :
-        draw :
-        
-        Returns
-        -------
-        img
-        '''
+        ''' Method to find hands in img and return img with hands drawn '''
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
 
@@ -64,21 +29,8 @@ class HandDetector():
                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
         return img
 
-    # Method used to return list of landmarks in img
     def findPosition(self, img, handNo=0, draw=True):
-        '''
-        Method for handling left mouse click event
-        ...
-        Parameters
-        ----------
-        img : 
-        handNo :
-        draw :
-        
-        Returns
-        -------
-        lmList
-        '''
+        ''' Method to return list of landmarks in img '''
         lmList = []
         if self.results.multi_hand_landmarks:
             myHand = self.results.multi_hand_landmarks[handNo]
