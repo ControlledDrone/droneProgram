@@ -13,9 +13,11 @@
 - [X] A computer with a webcam
 
 ### Software
-- [x] PyCharm or Visual Studio Code
-- [X] Push my commits to GitHub
-- [X] Open a pull request
+- [x] PyCharm (Version 3.8) or Visual Studio Code (1.56)
+- [X] Pip 19.2.3 or later
+- [X] Mediapipe 0.8.4.2 or later
+- [X] Opencv-python 1.20.3 or later
+- [X] Djitellopy 1.5 or later
 
 ## Directory
 - main.py
