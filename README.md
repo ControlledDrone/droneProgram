@@ -9,6 +9,7 @@ This is a semester project that recognizes hand gestures with Mediapipe that get
 
 ### Software
 - [x] PyCharm (Version 3.8) or Visual Studio Code (1.56)
+- [x] Python 3.8
 - [X] Pip 19.2.3 or later
 - [X] Mediapipe 0.8.4.2 or later
 - [X] Opencv-python 1.20.3 or later
