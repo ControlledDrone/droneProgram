@@ -107,7 +107,7 @@ class GUI():
             me.takeoff()
 
     def printDirection(img, vals, noOfFingers):
-        ''' Method for XXX '''
+        ''' Method for printing out values based on hand gestures'''
         cv2.rectangle(img, (0, 0), (800, 30), (255, 255, 255), cv2.FILLED)
         # Displaying text for certain fingercounts
         if noOfFingers == 0:
@@ -140,7 +140,7 @@ class GUI():
                             cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0), 1)
 
     def startGUI():
-        ''' Method for XXX '''
+        ''' Method for running our GUI to control the drone'''
         # Class objects
         detector = HandDetector()
         drone = DroneControls()
