@@ -25,7 +25,7 @@ class NavigateDrone():
         elif noOfFingers == 3 and centercoordinate[0] < screen_center_w:
             lr = int((-center_dist / 10) * 2)
 
-        # Backwards command if all four fingers are up but not the thumb and..
+        # Backwards command if all five fingers are up and..
         if noOfFingers == 5:
             if distance1 < 140 and distance1 > 110:
                 fb = -speed - 10
@@ -33,7 +33,7 @@ class NavigateDrone():
                 fb = -speed - 20
             elif distance1 < 80 and distance1 > 50:
                 fb = -speed - 30
-        # Forward command if all four fingers are up but not the thumb and..
+        # Forward command if all fivev fingers are up and..
         if noOfFingers == 5:
             if distance1 > 160 and distance1 < 190:
                 fb = speed + 10
