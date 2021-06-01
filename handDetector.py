@@ -6,9 +6,9 @@ import mediapipe as mp
 class HandDetector():
     ''' A class used to run graphical user interface with opencv '''
 
-    # Constructor for hand detector
+    
     def __init__(self, mode=False, maxHands=1, detectionCon=0.7, trackCon=0.6):
-        ''' Method for handling left mouse click event '''
+        '''  Constructor for hand detector '''
         self.mode = mode
         self.maxHands = maxHands  # Set to 1 to minimize confusion between detected hands
         self.detectionCon = detectionCon  # Optimal between 0.5-0.8
@@ -22,9 +22,11 @@ class HandDetector():
         ''' Method to find hands in img and return img with hands drawn '''
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         self.results = self.hands.process(imgRGB)
-
+        
+        # If there's hands with landmarks in the image
         if self.results.multi_hand_landmarks:
             for handLms in self.results.multi_hand_landmarks:
+                # Draw landmarks and connections between on imag
                 if draw:
                     self.mpDraw.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
         return img
@@ -37,7 +39,7 @@ class HandDetector():
             for id, lm in enumerate(myHand.landmark):
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
-                lmList.append([id, cx, cy])
+                lmList.append([id, cx, cy]) # Get id,x- and y coordinate of landmark
                 if draw:
                     cv2.circle(img, (cx, cy), 4, (255, 205, 195), cv2.FILLED)  # Silver color
         return lmList
