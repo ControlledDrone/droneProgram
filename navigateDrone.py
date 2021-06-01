@@ -6,7 +6,7 @@ class NavigateDrone():
     ''' A class used to make drone fly in choosen directions '''
 
     def navigateDrone(self, centercoordinate, img, noOfFingers, center_dist, distance1):
-        ''' Method used for navigating drone '''
+        ''' Method used for navigating drone left, right, forwards, backwards, up, dawn, yaw'''
         # Find center height and width of given img 
         screen_center_h, screen_center_w = DroneControls.findScreenCenter(img)
 
